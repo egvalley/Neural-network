@@ -47,6 +47,10 @@ end
 % Solve for the network weights using the Moore-Penrose pseudoinverse
 w = pinv(phi) * y_train;
 
+% Solve with the regularization factor
+%lambda=1;
+%w=inv(phi'*phi+lambda*eye(size(phi'*phi,1),size(phi'*phi,2)))*phi'*y_train;
+
 % Define the test inputs and compute the corresponding radial basis function values
 x_test = test_set(:,1);
 phi_test = zeros(length(x_test), num_rbfs);
