@@ -7,7 +7,7 @@ load MNIST_database.mat;
 % test_data = test data, 784x250 matrix
 % train_classlabel = the labels of the test data, 1x250 vector
 
-trainIdx = find(train_classlabel==2 | train_classlabel==4); % find the location of classes 0, 1, 2
+trainIdx = find(train_classlabel==2 | train_classlabel==4); % find the location of classes 2,4
 Train_ClassLabel = train_classlabel(trainIdx)';
 for tmp=1:length(Train_ClassLabel)
     if Train_ClassLabel(tmp)==2
