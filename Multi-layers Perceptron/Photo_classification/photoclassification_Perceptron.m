@@ -35,7 +35,6 @@ while true
             w = w + eta * (trainDesired(i) - train_pred(i)) * train_images(i,:)';
             b = b + eta * (trainDesired(i) - train_pred(i));
         end
-
     end
 
     % make the judgement
@@ -132,20 +131,20 @@ end
 
 % Loading the image and getting the labels
 function [image,label]=loadimage(files,folder,coeff)
-for i=3:length(files)
-    % Get the label
-    tmp1 = strsplit(files(i).name, {'_', '.'});
-    label(i-2)= str2num(tmp1{2});
-    % Read train images and store
-    filename = fullfile(folder, files(i).name);
-    % Change the format 
-    images = double(imread(filename));
-    % Compress the pictures
-    resizeImage = imresize(images,coeff);
-    % SVD compressing
-    svdimage=svd_process(resizeImage);
-    % Put the data into columns
-    V = svdimage(:);
-    image(i-2,:)=V;      
-end
+    for i=3:length(files)
+        % Get the label
+        tmp1 = strsplit(files(i).name, {'_', '.'});
+        label(i-2)= str2num(tmp1{2});
+        % Read train images and store
+        filename = fullfile(folder, files(i).name);
+        % Change the format 
+        images = double(imread(filename));
+        % Compress the pictures
+        resizeImage = imresize(images,coeff);
+        % SVD compressing
+        svdimage=svd_process(resizeImage);
+        % Put the data into columns
+        V = svdimage(:);
+        image(i-2,:)=V;      
+    end
 end
