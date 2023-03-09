@@ -9,4 +9,4 @@ In this repository, I uploaded the MATLAB codes of several projects.
 This repository included serveral projects: Perceptron/ Multi-layers Perceptron/ Radial Basis Function Network/ Self-organizing Map  
   
 3\ How to read  
-Please refer to homework*.pdf firtly and find corresponding MATLAB codes.
+Please refer to homework*.pdf firstly and find corresponding MATLAB codes.
